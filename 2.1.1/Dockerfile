@@ -122,6 +122,6 @@ RUN chown -R couchdb:couchdb /opt/couchdb/etc/default.d/ /opt/couchdb/etc/vm.arg
 WORKDIR /opt/couchdb
 EXPOSE 5984 4369 9100
 VOLUME ["/opt/couchdb/data"]
-
+USER couchdb
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
 CMD ["/opt/couchdb/bin/couchdb"]
